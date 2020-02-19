@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A307D1C-9C53-409E-9546-0FC128EC08E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Esr.Core.Component</RootNamespace>
+    <AssemblyName>Esr.Core.Component</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalComponets\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalComponets\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalComponets\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks">
+      <HintPath>ExternalComponets\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Dynamic" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnumHelper.cs" />
+    <Compile Include="FBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBase.Designer.cs">
+      <DependentUpon>FBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvokeMethod.cs" />
+    <Compile Include="Log\FLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log\FLog.Designer.cs">
+      <DependentUpon>FLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisualisador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisualisador.designer.cs">
+      <DependentUpon>FormVisualisador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FResult.Designer.cs">
+      <DependentUpon>FResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSearch.Designer.cs">
+      <DependentUpon>FSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IComponet.cs" />
+    <Compile Include="SAttributes\ImageSource.cs" />
+    <Compile Include="SAttributes\IModule.cs" />
+    <Compile Include="SCheckListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProcess.Designer.cs">
+      <DependentUpon>FProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMenuProcess.xaml.cs">
+      <DependentUpon>SMenuProcess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SMenuSearch.xaml.cs">
+      <DependentUpon>SMenuSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SMenu.xaml.cs">
+      <DependentUpon>SMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SAttributes\DisplayInfoAttribute.cs" />
+    <Compile Include="SButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FForm.Designer.cs">
+      <DependentUpon>FForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SInvokeMethod.cs" />
+    <Compile Include="SLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SMasckEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SMenuComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SNumeric.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SReflection.cs" />
+    <Compile Include="SReports.cs" />
+    <Compile Include="SRichText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="STabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="STextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SToolTipText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Log\FLog.resx">
+      <DependentUpon>FLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisualisador.resx">
+      <DependentUpon>FormVisualisador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FResult.resx">
+      <DependentUpon>FResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSearch.resx">
+      <DependentUpon>FSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SComboBox.resx">
+      <DependentUpon>SComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SDateTimePicker.resx">
+      <DependentUpon>SDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FForm.resx">
+      <DependentUpon>FForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProcess.resx">
+      <DependentUpon>FProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SGrid.resx">
+      <DependentUpon>SGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SLabel.resx">
+      <DependentUpon>SLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SNumeric.resx">
+      <DependentUpon>SNumeric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPictureBox.resx">
+      <DependentUpon>SPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STextBox.resx">
+      <DependentUpon>STextBox.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <Resource Include="Resources\icon_search_40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_add_40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_save_40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_remove_40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_printer.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_printer_40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon-cancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Esr.Core.App\Esr.Core.App.csproj">
+      <Project>{aeb6cb44-c09e-4b16-99b5-c36af3ccf45e}</Project>
+      <Name>Esr.Core.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Dominio\Esr.Core.Domain.csproj">
+      <Project>{9ad3431f-0b1d-4683-ab51-e47f0968bd69}</Project>
+      <Name>Esr.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Repositorio\Esr.Core.Repository.csproj">
+      <Project>{A30F0C32-7DE4-4BDE-A9FB-A3148405C5D7}</Project>
+      <Name>Esr.Core.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExternalComponets\AForge.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalComponets\AForge.Video.DirectShow.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalComponets\AForge.Video.DirectShow.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalComponets\AForge.Video.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalComponets\AForge.Video.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalComponets\AForge.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ExternalComponets\System.Linq.Dynamic.dll" />
+    <Resource Include="Resources\Icon_Cancel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icon_Confirm.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Resources\icon_folder_updates.fw.png" />
+    <None Include="Resources\icon_folder_printer.fw.png" />
+    <None Include="Resources\folder_file.png" />
+    <None Include="ExternalComponets\Microsoft.VisualBasic.PowerPacks.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="ExternalComponets\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="ExternalComponets\Microsoft.VisualBasic.PowerPacks.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\arrow-top-40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\arrow-bottom-40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon_folder_search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon_folder_remove.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon_folder_new.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon_folder_edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon_folder_search-40.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon_folder_remove-40.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon_folder_new-40.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon_folder_edit-40.fw.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon-warning.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon-success.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon-error.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\icon-alert.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SMenuProcess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SMenuSearch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Forms\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

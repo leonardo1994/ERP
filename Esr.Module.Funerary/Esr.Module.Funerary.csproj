@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{342F87A5-93E0-4C5B-9805-5B513799766C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Esr.Module.Funerary</RootNamespace>
+    <AssemblyName>Esr.Module.Funerary</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL" />
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL" />
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks">
+      <HintPath>..\Esr.Core.Component\ExternalComponets\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\DataDeceaseds\DataDeceasedApp.cs" />
+    <Compile Include="App\GroupAttendants\GroupAttendantApp.cs" />
+    <Compile Include="App\GroupAttendants\AttendantApp.cs" />
+    <Compile Include="App\Contractors\ContractorApp.cs" />
+    <Compile Include="App\DebitNotes\DebitNoteApp.cs" />
+    <Compile Include="App\OrderOfServices\OsDocumentApp.cs" />
+    <Compile Include="App\OrderOfServices\OsContractorProductApp.cs" />
+    <Compile Include="App\OrderOfServices\OsVehicleApp.cs" />
+    <Compile Include="App\OrderOfServices\OsProductApp.cs" />
+    <Compile Include="App\OrderOfServices\OsContractorServiceApp.cs" />
+    <Compile Include="App\OrderOfServices\OsServiceApp.cs" />
+    <Compile Include="App\OrderOfServices\OrderOfServiceApp.cs" />
+    <Compile Include="App\Plans\PlanApp.cs" />
+    <Compile Include="App\Religions\ReligionApp.cs" />
+    <Compile Include="Controllers\AttendentController.cs" />
+    <Compile Include="Controllers\PlanController.cs" />
+    <Compile Include="Controllers\ReligionController.cs" />
+    <Compile Include="Controllers\OsVehicleController.cs" />
+    <Compile Include="Controllers\OrderOfServiceController.cs" />
+    <Compile Include="Controllers\OsServiceController.cs" />
+    <Compile Include="Controllers\OsProductController.cs" />
+    <Compile Include="Controllers\OsContractorServiceController.cs" />
+    <Compile Include="Controllers\OsContractorProductController.cs" />
+    <Compile Include="Controllers\OsDocumentController.cs" />
+    <Compile Include="Controllers\GroupAttendantController.cs" />
+    <Compile Include="Controllers\DebitNotesController.cs" />
+    <Compile Include="Controllers\DataDeceasedController.cs" />
+    <Compile Include="Controllers\ContractorController.cs" />
+    <Compile Include="Domain\DataDeceaseds\DataDeceased.cs" />
+    <Compile Include="Domain\GroupAttendants\Attendant.cs" />
+    <Compile Include="Domain\GroupAttendants\GroupAttendant.cs" />
+    <Compile Include="Domain\Contractors\Contractor.cs" />
+    <Compile Include="Domain\DebitNotes\DebitNote.cs" />
+    <Compile Include="Domain\Integration\Stock\ItemOutputStockFunerary.cs" />
+    <Compile Include="Domain\Integration\Stock\OutputStockFunerary.cs" />
+    <Compile Include="Domain\OrderOfServices\ClosedPeriods.cs" />
+    <Compile Include="Domain\OrderOfServices\OsContractorService.cs" />
+    <Compile Include="Domain\OrderOfServices\OsDocument.cs" />
+    <Compile Include="Domain\OrderOfServices\OrderOfService.cs" />
+    <Compile Include="Domain\OrderOfServices\OsContractorProduct.cs" />
+    <Compile Include="Domain\OrderOfServices\OsProduct.cs" />
+    <Compile Include="Domain\OrderOfServices\OsService.cs" />
+    <Compile Include="Domain\OrderOfServices\OsVehicle.cs" />
+    <Compile Include="Domain\Plans\Plan.cs" />
+    <Compile Include="Domain\Religions\Religion.cs" />
+    <Compile Include="ESRDataSet.cs">
+      <DependentUpon>ESRDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ESRDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ESRDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataDeceaseds\FDataDeceased.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataDeceaseds\FDataDeceased.designer.cs">
+      <DependentUpon>FDataDeceased.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FDocument.Designer.cs">
+      <DependentUpon>FDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GroupAttendants\FGroupAttendant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GroupAttendants\FGroupAttendant.Designer.cs">
+      <DependentUpon>FGroupAttendant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Contractors\FContractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Contractors\FContractor.Designer.cs">
+      <DependentUpon>FContractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DebitNotes\FDebitNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DebitNotes\FDebitNotes.Designer.cs">
+      <DependentUpon>FDebitNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOrdemOfService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOrdemOfService.Designer.cs">
+      <DependentUpon>FOrdemOfService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOsContractorProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOsContractorProduct.Designer.cs">
+      <DependentUpon>FOsContractorProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOscontractorService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOscontractorService.Designer.cs">
+      <DependentUpon>FOscontractorService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOsProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOsProduct.Designer.cs">
+      <DependentUpon>FOsProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOsService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOsService.Designer.cs">
+      <DependentUpon>FOsService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOsVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderOfServices\FOsVehicle.Designer.cs">
+      <DependentUpon>FOsVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plans\FPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plans\FPlan.Designer.cs">
+      <DependentUpon>FPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Religions\FReligion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Religions\FReligion.Designer.cs">
+      <DependentUpon>FReligion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapperConfig\FuneraryMapper.cs" />
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DebitNoteView.cs" />
+    <Compile Include="Reports\OrderOfServiceView.cs" />
+    <Compile Include="Reports\OsVehicleView.cs" />
+    <Compile Include="Reports\ProvidersView.cs" />
+    <Compile Include="Repository\DataDeceaseds\ContractorRepo.cs" />
+    <Compile Include="Repository\GroupAttendants\GroupAttendantRepo.cs" />
+    <Compile Include="Repository\GroupAttendants\AttendantRepo.cs" />
+    <Compile Include="Repository\Contractors\ContractorRepo.cs" />
+    <Compile Include="Repository\DbContext.cs" />
+    <Compile Include="Repository\DebitNotes\DebitNoteRepo.cs" />
+    <Compile Include="Repository\OrderOfServices\OsContractorProductRepo.cs" />
+    <Compile Include="Repository\OrderOfServices\OsContractorServiceRepo.cs" />
+    <Compile Include="Repository\OrderOfServices\OsServiceRepo.cs" />
+    <Compile Include="Repository\OrderOfServices\OsProductRepo.cs" />
+    <Compile Include="Repository\OrderOfServices\OsVehicleRepo.cs" />
+    <Compile Include="Repository\OrderOfServices\OsDocumentRepo.cs" />
+    <Compile Include="Repository\OrderOfServices\OrderOfServiceRepo.cs" />
+    <Compile Include="Repository\Plans\PlanRepo.cs" />
+    <Compile Include="Repository\Religions\ReligionRepo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ESRDataSet.xsc">
+      <DependentUpon>ESRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ESRDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ESRDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ESRDataSet.xss">
+      <DependentUpon>ESRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Esr.Module.Funerary.Reports.ContractorServices.datasource" />
+    <None Include="Properties\DataSources\Esr.Module.Funerary.Reports.DebitNoteView.datasource" />
+    <None Include="Properties\DataSources\Esr.Module.Funerary.Reports.OrderOfServiceView.datasource" />
+    <None Include="Properties\DataSources\Esr.Module.Funerary.Reports.OsVehicleView.datasource" />
+    <None Include="Properties\DataSources\Esr.Module.Funerary.Reports.VehicleView.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\icon-nt.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Esr.Core.App\Esr.Core.App.csproj">
+      <Project>{aeb6cb44-c09e-4b16-99b5-c36af3ccf45e}</Project>
+      <Name>Esr.Core.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Component\Esr.Core.Component.csproj">
+      <Project>{0a307d1c-9c53-409e-9546-0fc128ec08e4}</Project>
+      <Name>Esr.Core.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Dominio\Esr.Core.Domain.csproj">
+      <Project>{9ad3431f-0b1d-4683-ab51-e47f0968bd69}</Project>
+      <Name>Esr.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Repositorio\Esr.Core.Repository.csproj">
+      <Project>{a30f0c32-7de4-4bde-a9fb-a3148405c5d7}</Project>
+      <Name>Esr.Core.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Integration\Esr.Integration.csproj">
+      <Project>{534CB48A-E420-4389-A78B-997150EF1BC8}</Project>
+      <Name>Esr.Integration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Module.FleetManagement\Esr.Module.FleetManagement.csproj">
+      <Project>{3fa8cb3a-0bbb-440b-b18d-24a2fd954bd0}</Project>
+      <Name>Esr.Module.FleetManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Module.InitialRegistration\Esr.Module.InitialRegistration.csproj">
+      <Project>{5E20D8BD-5578-4EF1-87A0-D4C70BAF2B75}</Project>
+      <Name>Esr.Module.InitialRegistration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Module.Stock\Esr.Module.Stock.csproj">
+      <Project>{36317f71-daa6-4955-a9c5-4a91dac5b5f3}</Project>
+      <Name>Esr.Module.Stock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PainelControle\Esr.Module.ControlPainel.csproj">
+      <Project>{82F99350-2393-4F54-8545-93EE1F4CCD0E}</Project>
+      <Name>Esr.Module.ControlPainel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_religion.png" />
+    <None Include="Resources\dead.png" />
+    <EmbeddedResource Include="Forms\Contractors\FContractor.resx">
+      <DependentUpon>FContractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataDeceaseds\FDataDeceased.resx">
+      <DependentUpon>FDataDeceased.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CapaOrdemServico.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Providers.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RelacaoOS.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportProviders.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\VehicleService.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\icon_orderService.png" />
+    <None Include="Resources\icon_plan.png" />
+    <None Include="Resources\folder_file.png" />
+    <EmbeddedResource Include="Forms\OrderOfServices\FDocument.resx">
+      <DependentUpon>FDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GroupAttendants\FGroupAttendant.resx">
+      <DependentUpon>FGroupAttendant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DebitNotes\FDebitNotes.resx">
+      <DependentUpon>FDebitNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderOfServices\FOrdemOfService.resx">
+      <DependentUpon>FOrdemOfService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderOfServices\FOsContractorProduct.resx">
+      <DependentUpon>FOsContractorProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderOfServices\FOscontractorService.resx">
+      <DependentUpon>FOscontractorService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderOfServices\FOsProduct.resx">
+      <DependentUpon>FOsProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderOfServices\FOsService.resx">
+      <DependentUpon>FOsService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderOfServices\FOsVehicle.resx">
+      <DependentUpon>FOsVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plans\FPlan.resx">
+      <DependentUpon>FPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Religions\FReligion.resx">
+      <DependentUpon>FReligion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Reports\NotaDebito.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_contracor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Integration\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

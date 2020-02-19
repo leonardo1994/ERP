@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8129098D-51D9-483E-B978-02EFEA12D1CA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Esr.Module.Parking</RootNamespace>
+    <AssemblyName>Esr.Module.Parking</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL" />
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\ParkingHoursVariationApp.cs" />
+    <Compile Include="App\ParkingAgreementApp.cs" />
+    <Compile Include="App\ParkingTableOfPriceApp.cs" />
+    <Compile Include="App\ParkingItemTableOfPriceApp.cs" />
+    <Compile Include="App\ParkingInOutApp.cs" />
+    <Compile Include="Controllers\ParkingHoursVariationController.cs" />
+    <Compile Include="Controllers\ParkingAgreementController.cs" />
+    <Compile Include="Controllers\ParkingParameterController.cs" />
+    <Compile Include="Controllers\ParkingTableOfPriceController.cs" />
+    <Compile Include="Controllers\ParkingItemTableOfPriceController.cs" />
+    <Compile Include="Controllers\ParkingInOutController.cs" />
+    <Compile Include="Domain\ParkingAgreement.cs" />
+    <Compile Include="Domain\ParkingHoursVariation.cs" />
+    <Compile Include="Domain\ParkingInOut.cs" />
+    <Compile Include="Domain\ParkingItemTableOfPrice.cs" />
+    <Compile Include="Domain\ParkingParameter.cs" />
+    <Compile Include="Domain\ParkingTableOfPrice.cs" />
+    <Compile Include="Forms\FParkingAgreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FParkingAgreement.Designer.cs">
+      <DependentUpon>FParkingAgreement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FParkingHoursVariation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FParkingHoursVariation.Designer.cs">
+      <DependentUpon>FParkingHoursVariation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FParkingIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FParkingIn.Designer.cs">
+      <DependentUpon>FParkingIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FParkingItemTableOfPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FParkingItemTableOfPrice.Designer.cs">
+      <DependentUpon>FParkingItemTableOfPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FParkingOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FParkingOut.Designer.cs">
+      <DependentUpon>FParkingOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FParkingParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FParkingParameter.Designer.cs">
+      <DependentUpon>FParkingParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FParkingTableOfPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FParkingTableOfPrice.Designer.cs">
+      <DependentUpon>FParkingTableOfPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Ticket\TicketView.cs" />
+    <Compile Include="Repository\DbContext.cs" />
+    <Compile Include="Repository\ParkingHoursVariationRepo.cs" />
+    <Compile Include="Repository\ParkingAgreementRepo.cs" />
+    <Compile Include="Repository\ParkingItemTableOfPriceRepo.cs" />
+    <Compile Include="Repository\ParkingTableOfPriceRepo.cs" />
+    <Compile Include="Repository\ParkingInOutRepo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Esr.Module.Parking.Reports.Ticket.TicketView.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Esr.Core.App\Esr.Core.App.csproj">
+      <Project>{AEB6CB44-C09E-4B16-99B5-C36AF3CCF45E}</Project>
+      <Name>Esr.Core.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Component\Esr.Core.Component.csproj">
+      <Project>{0a307d1c-9c53-409e-9546-0fc128ec08e4}</Project>
+      <Name>Esr.Core.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Dominio\Esr.Core.Domain.csproj">
+      <Project>{9AD3431F-0B1D-4683-AB51-E47F0968BD69}</Project>
+      <Name>Esr.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Repositorio\Esr.Core.Repository.csproj">
+      <Project>{A30F0C32-7DE4-4BDE-A9FB-A3148405C5D7}</Project>
+      <Name>Esr.Core.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Module.FleetManagement\Esr.Module.FleetManagement.csproj">
+      <Project>{3fa8cb3a-0bbb-440b-b18d-24a2fd954bd0}</Project>
+      <Name>Esr.Module.FleetManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Module.InitialRegistration\Esr.Module.InitialRegistration.csproj">
+      <Project>{5E20D8BD-5578-4EF1-87A0-D4C70BAF2B75}</Project>
+      <Name>Esr.Module.InitialRegistration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PainelControle\Esr.Module.ControlPainel.csproj">
+      <Project>{82F99350-2393-4F54-8545-93EE1F4CCD0E}</Project>
+      <Name>Esr.Module.ControlPainel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FParkingAgreement.resx">
+      <DependentUpon>FParkingAgreement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FParkingHoursVariation.resx">
+      <DependentUpon>FParkingHoursVariation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FParkingIn.resx">
+      <DependentUpon>FParkingIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FParkingItemTableOfPrice.resx">
+      <DependentUpon>FParkingItemTableOfPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FParkingOut.resx">
+      <DependentUpon>FParkingOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FParkingParameter.resx">
+      <DependentUpon>FParkingParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FParkingTableOfPrice.resx">
+      <DependentUpon>FParkingTableOfPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Ticket\RTicket.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Parking.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TableOfPrice.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ItemTableOfPrice.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Agreement.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Enums\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

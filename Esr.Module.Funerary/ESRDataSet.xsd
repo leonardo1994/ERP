@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ESRDataSet" targetNamespace="http://tempuri.org/ESRDataSet.xsd" xmlns:mstns="http://tempuri.org/ESRDataSet.xsd" xmlns="http://tempuri.org/ESRDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ESRConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ESRConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Esr.Module.Funerary.Properties.Settings.GlobalReference.Default.ESRConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OsProductTableAdapter" GeneratorDataComponentClassName="OsProductTableAdapter" Name="OsProduct" UserDataComponentName="OsProductTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ESRConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        LegalPerson.Id, OrderOfService.NumberOs, OrderOfService.DateRegistration, LegalPerson.CorporateName, StockItems.Description, OsProduct.Quantity, OsProduct.UnitaryValue, OsProduct.ValueTotal
+FROM            OsProduct INNER JOIN
+                         OrderOfService ON OsProduct.OrderOfServiceId = OrderOfService.Id INNER JOIN
+                         StockItems ON OsProduct.StockItemId = OsProduct.StockItemId INNER JOIN
+                         LegalPerson ON OsProduct.ProviderId = LegalPerson.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="UnitaryValue" DataSetColumn="UnitaryValue" />
+              <Mapping SourceColumn="ValueTotal" DataSetColumn="ValueTotal" />
+              <Mapping SourceColumn="DateRegistration" DataSetColumn="DateRegistration" />
+              <Mapping SourceColumn="NumberOs" DataSetColumn="NumberOs" />
+              <Mapping SourceColumn="CorporateName" DataSetColumn="CorporateName" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelacaoOSTableAdapter" GeneratorDataComponentClassName="RelacaoOSTableAdapter" Name="RelacaoOS" UserDataComponentName="RelacaoOSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ESRConnectionString (Settings)" DbObjectName="ESR.dbo.OrderOfService" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        OS.NumberOs, OS.DateRegistration, SUM(OsProduct.ValueTotal) + SUM(OsService.ValueService) AS ValorTotalOS
+FROM            OrderOfService AS OS INNER JOIN
+                         OsProduct ON OsProduct.OrderOfServiceId = OS.Id INNER JOIN
+                         OsService ON OsService.OrderOfServiceId = OS.Id
+GROUP BY OS.NumberOs, OS.DateRegistration</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NumberOs" DataSetColumn="NumberOs" />
+              <Mapping SourceColumn="ValorTotalOS" DataSetColumn="ValorTotalOS" />
+              <Mapping SourceColumn="DateRegistration" DataSetColumn="DateRegistration" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ESRDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ESRDataSet" msprop:Generator_UserDSName="ESRDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OsProduct" msprop:Generator_TableClassName="OsProductDataTable" msprop:Generator_TableVarName="tableOsProduct" msprop:Generator_TablePropName="OsProduct" msprop:Generator_RowDeletingName="OsProductRowDeleting" msprop:Generator_RowChangingName="OsProductRowChanging" msprop:Generator_RowEvHandlerName="OsProductRowChangeEventHandler" msprop:Generator_RowDeletedName="OsProductRowDeleted" msprop:Generator_UserTableName="OsProduct" msprop:Generator_RowChangedName="OsProductRowChanged" msprop:Generator_RowEvArgName="OsProductRowChangeEvent" msprop:Generator_RowClassName="OsProductRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:decimal" />
+              <xs:element name="UnitaryValue" msprop:Generator_ColumnVarNameInTable="columnUnitaryValue" msprop:Generator_ColumnPropNameInRow="UnitaryValue" msprop:Generator_ColumnPropNameInTable="UnitaryValueColumn" msprop:Generator_UserColumnName="UnitaryValue" type="xs:decimal" />
+              <xs:element name="ValueTotal" msprop:Generator_ColumnVarNameInTable="columnValueTotal" msprop:Generator_ColumnPropNameInRow="ValueTotal" msprop:Generator_ColumnPropNameInTable="ValueTotalColumn" msprop:Generator_UserColumnName="ValueTotal" type="xs:decimal" />
+              <xs:element name="DateRegistration" msprop:Generator_ColumnVarNameInTable="columnDateRegistration" msprop:Generator_ColumnPropNameInRow="DateRegistration" msprop:Generator_ColumnPropNameInTable="DateRegistrationColumn" msprop:Generator_UserColumnName="DateRegistration" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NumberOs" msprop:Generator_ColumnVarNameInTable="columnNumberOs" msprop:Generator_ColumnPropNameInRow="NumberOs" msprop:Generator_ColumnPropNameInTable="NumberOsColumn" msprop:Generator_UserColumnName="NumberOs">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CorporateName" msprop:Generator_ColumnVarNameInTable="columnCorporateName" msprop:Generator_ColumnPropNameInRow="CorporateName" msprop:Generator_ColumnPropNameInTable="CorporateNameColumn" msprop:Generator_UserColumnName="CorporateName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RelacaoOS" msprop:Generator_TableClassName="RelacaoOSDataTable" msprop:Generator_TableVarName="tableRelacaoOS" msprop:Generator_TablePropName="RelacaoOS" msprop:Generator_RowDeletingName="RelacaoOSRowDeleting" msprop:Generator_RowChangingName="RelacaoOSRowChanging" msprop:Generator_RowEvHandlerName="RelacaoOSRowChangeEventHandler" msprop:Generator_RowDeletedName="RelacaoOSRowDeleted" msprop:Generator_UserTableName="RelacaoOS" msprop:Generator_RowChangedName="RelacaoOSRowChanged" msprop:Generator_RowEvArgName="RelacaoOSRowChangeEvent" msprop:Generator_RowClassName="RelacaoOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NumberOs" msprop:Generator_ColumnVarNameInTable="columnNumberOs" msprop:Generator_ColumnPropNameInRow="NumberOs" msprop:Generator_ColumnPropNameInTable="NumberOsColumn" msprop:Generator_UserColumnName="NumberOs">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ValorTotalOS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorTotalOS" msprop:Generator_ColumnPropNameInRow="ValorTotalOS" msprop:Generator_ColumnPropNameInTable="ValorTotalOSColumn" msprop:Generator_UserColumnName="ValorTotalOS" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DateRegistration" msprop:Generator_ColumnVarNameInTable="columnDateRegistration" msprop:Generator_ColumnPropNameInRow="DateRegistration" msprop:Generator_ColumnPropNameInTable="DateRegistrationColumn" msprop:Generator_UserColumnName="DateRegistration" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OsProduct" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

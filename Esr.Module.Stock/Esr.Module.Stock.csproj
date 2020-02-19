@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36317F71-DAA6-4955-A9C5-4A91DAC5B5F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Esr.Module.Stock</RootNamespace>
+    <AssemblyName>Esr.Module.Stock</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\InputsOutPuts\OutputStockApp.cs" />
+    <Compile Include="App\InputsOutPuts\ItemOutputStockApp.cs" />
+    <Compile Include="App\InputsOutPuts\ItemInputStockApp.cs" />
+    <Compile Include="App\InputsOutPuts\InputStockApp.cs" />
+    <Compile Include="App\Integration\IntegrationCapeStockApp.cs" />
+    <Compile Include="App\Integration\IntegrationItemsStockApp.cs" />
+    <Compile Include="App\Managements\InventoryApp.cs" />
+    <Compile Include="App\Managements\StockManagement.cs" />
+    <Compile Include="Controllers\OutputStockController.cs" />
+    <Compile Include="Controllers\ItemOutputStockController.cs" />
+    <Compile Include="Controllers\ItemInputStockController.cs" />
+    <Compile Include="Controllers\InputStockController.cs" />
+    <Compile Include="Domain\Integration\IntegrationCapeStock.cs" />
+    <Compile Include="Domain\Integration\IntegrationItemsStock.cs" />
+    <Compile Include="Domain\Movements\Inventory.cs" />
+    <Compile Include="Domain\Movements\InventoryItems.cs" />
+    <Compile Include="Domain\Movements\ItemOutputStock.cs" />
+    <Compile Include="Domain\Movements\OutputStock.cs" />
+    <Compile Include="Domain\Movements\InputStock.cs" />
+    <Compile Include="Domain\Movements\ItemInputStock.cs" />
+    <Compile Include="Domain\Movements\ResponsibleInventory.cs" />
+    <Compile Include="Forms\InputsOutPuts\FOutputStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputsOutPuts\FOutputStock.Designer.cs">
+      <DependentUpon>FOutputStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputsOutPuts\FInputStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputsOutPuts\FInputStock.Designer.cs">
+      <DependentUpon>FInputStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputsOutPuts\FItemOutputStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputsOutPuts\FItemOutputStock.Designer.cs">
+      <DependentUpon>FItemOutputStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputsOutPuts\FItemInputStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputsOutPuts\FItemInputStock.Designer.cs">
+      <DependentUpon>FItemInputStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapperConfig\StockMapper.cs" />
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\DbContext.cs" />
+    <Compile Include="Repository\InputsOutPuts\OutputStockRepo.cs" />
+    <Compile Include="Repository\InputsOutPuts\ItemOutputStockRepo.cs" />
+    <Compile Include="Repository\InputsOutPuts\ItemInputStockRepo.cs" />
+    <Compile Include="Repository\InputsOutPuts\InputStockRepo.cs" />
+    <Compile Include="Repository\Integration\IntegrationCapeStockRepo.cs" />
+    <Compile Include="Repository\Integration\IntegrationItemsStockRepo.cs" />
+    <Compile Include="Repository\Moviments\InventoryRepo.cs" />
+    <Compile Include="Repository\OdbcSqlServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\InputsOutPuts\FOutputStock.resx">
+      <DependentUpon>FOutputStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputsOutPuts\FInputStock.resx">
+      <DependentUpon>FInputStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputsOutPuts\FItemOutputStock.resx">
+      <DependentUpon>FItemOutputStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputsOutPuts\FItemInputStock.resx">
+      <DependentUpon>FItemInputStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Esr.Core.App\Esr.Core.App.csproj">
+      <Project>{aeb6cb44-c09e-4b16-99b5-c36af3ccf45e}</Project>
+      <Name>Esr.Core.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Component\Esr.Core.Component.csproj">
+      <Project>{0a307d1c-9c53-409e-9546-0fc128ec08e4}</Project>
+      <Name>Esr.Core.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Dominio\Esr.Core.Domain.csproj">
+      <Project>{9ad3431f-0b1d-4683-ab51-e47f0968bd69}</Project>
+      <Name>Esr.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Repositorio\Esr.Core.Repository.csproj">
+      <Project>{a30f0c32-7de4-4bde-a9fb-a3148405c5d7}</Project>
+      <Name>Esr.Core.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Module.InitialRegistration\Esr.Module.InitialRegistration.csproj">
+      <Project>{5E20D8BD-5578-4EF1-87A0-D4C70BAF2B75}</Project>
+      <Name>Esr.Module.InitialRegistration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Module.TaxManagement\Esr.Module.TaxManagement.csproj">
+      <Project>{d17c348e-2a7d-44d1-8b49-ee62ce65db73}</Project>
+      <Name>Esr.Module.TaxManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PainelControle\Esr.Module.ControlPainel.csproj">
+      <Project>{82F99350-2393-4F54-8545-93EE1F4CCD0E}</Project>
+      <Name>Esr.Module.ControlPainel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\arrow_bottom_red.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\arrow_top_green.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_family_stock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_mark.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_model.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_ncm.fw.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_stock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_taxation.fw.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_unitMeasure.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_list.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ion_composition.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\IStock\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

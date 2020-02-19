@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82F99350-2393-4F54-8545-93EE1F4CCD0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Esr.Module.ControlPainel</RootNamespace>
+    <AssemblyName>Esr.Module.ControlPainel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL" />
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.1.1.0-preview\lib\net45\Microsoft.Identity.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Esr.Core.Component\ExternalComponets\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\DbTableController.cs" />
+    <Compile Include="Controllers\UserCompanyController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\GroupUserController.cs" />
+    <Compile Include="Controllers\ConsultFormController.cs" />
+    <Compile Include="Controllers\FilterController.cs" />
+    <Compile Include="Controllers\GroupPermissionController.cs" />
+    <Compile Include="Controllers\GroupAccessController.cs" />
+    <Compile Include="Controllers\ReportFormController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\TranslateController.cs" />
+    <Compile Include="Controllers\TableController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\QueryController.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
+    <Compile Include="Controllers\InactiveFiltersController.cs" />
+    <Compile Include="Controllers\ConsultController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\ConfAutNumeringController.cs" />
+    <Compile Include="Controllers\FilterCompanyController.cs" />
+    <Compile Include="Domain\UpdateVersion\VersionControl.cs" />
+    <Compile Include="Forms\FCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FCompany.Designer.cs">
+      <DependentUpon>FCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FConfAutNumbering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FConfAutNumbering.Designer.cs">
+      <DependentUpon>FConfAutNumbering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FConsult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FConsult.Designer.cs">
+      <DependentUpon>FConsult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FFilter.Designer.cs">
+      <DependentUpon>FFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FGroupAccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FGroupAccess.Designer.cs">
+      <DependentUpon>FGroupAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiltersCompanies\FFilterCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltersCompanies\FFilterCompany.Designer.cs">
+      <DependentUpon>FFilterCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiltersCompanies\FFilterCompany_001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FiltersCompanies\FFilterCompany_001.Designer.cs">
+      <DependentUpon>FFilterCompany_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FiltersCompanies\GridFilterCompany.xaml.cs">
+      <DependentUpon>GridFilterCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FInactiveFilters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FInactiveFilters.Designer.cs">
+      <DependentUpon>FInactiveFilters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FPermission.Designer.cs">
+      <DependentUpon>FPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FQuery.Designer.cs">
+      <DependentUpon>FQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FReport.Designer.cs">
+      <DependentUpon>FReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FTable.Designer.cs">
+      <DependentUpon>FTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FTranslate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FTranslate.Designer.cs">
+      <DependentUpon>FTranslate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FUser.Designer.cs">
+      <DependentUpon>FUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\DbContext.cs" />
+    <Compile Include="Repository\OdbcSqlServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Esr.Core.App\Esr.Core.App.csproj">
+      <Project>{AEB6CB44-C09E-4B16-99B5-C36AF3CCF45E}</Project>
+      <Name>Esr.Core.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Component\Esr.Core.Component.csproj">
+      <Project>{0A307D1C-9C53-409E-9546-0FC128EC08E4}</Project>
+      <Name>Esr.Core.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Dominio\Esr.Core.Domain.csproj">
+      <Project>{9ad3431f-0b1d-4683-ab51-e47f0968bd69}</Project>
+      <Name>Esr.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Esr.Core.Repositorio\Esr.Core.Repository.csproj">
+      <Project>{a30f0c32-7de4-4bde-a9fb-a3148405c5d7}</Project>
+      <Name>Esr.Core.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FCompany.resx">
+      <DependentUpon>FCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FConfAutNumbering.resx">
+      <DependentUpon>FConfAutNumbering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FConsult.resx">
+      <DependentUpon>FConsult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FFilter.resx">
+      <DependentUpon>FFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FGroupAccess.resx">
+      <DependentUpon>FGroupAccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltersCompanies\FFilterCompany.resx">
+      <DependentUpon>FFilterCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FiltersCompanies\FFilterCompany_001.resx">
+      <DependentUpon>FFilterCompany_001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FInactiveFilters.resx">
+      <DependentUpon>FInactiveFilters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FPermission.resx">
+      <DependentUpon>FPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FQuery.resx">
+      <DependentUpon>FQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FReport.resx">
+      <DependentUpon>FReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FTable.resx">
+      <DependentUpon>FTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FTranslate.resx">
+      <DependentUpon>FTranslate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FUser.resx">
+      <DependentUpon>FUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Forms\FiltersCompanies\GridFilterCompany.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_permission.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_bussines.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_translate.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_user_50.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img-group.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_query.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_sql.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon-screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

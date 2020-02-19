@@ -1,0 +1,234 @@
+﻿<UserControl x:Class="Esr.Main.Menu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d" Height="145" Background="White" Width="824">
+
+    <Ribbon x:Name="Ribbon" Background="White" FontSize="12">
+        <Ribbon.ApplicationMenu>
+            <RibbonApplicationMenu Label="ESR SOFTWARES" DropDownHeight="200">
+                <RibbonApplicationSplitMenuItem Name="ListCompanies" Header="Empresas" DropDownHeight="200">
+                </RibbonApplicationSplitMenuItem>
+                <RibbonApplicationMenuItem Header="Trocar senha"/>
+                <RibbonApplicationMenuItem Header="Limpar histórico"/>
+                <RibbonApplicationMenuItem Header="Dados Pessoais"/>
+                <RibbonApplicationMenuItem Header="Dados Pessoais"/>
+                <RibbonApplicationMenuItem Header="Interface"/>
+            </RibbonApplicationMenu>
+        </Ribbon.ApplicationMenu>
+        <RibbonTab Header="Painel de Controle" Background="White" x:Name="MenuPaindelControle">
+            <RibbonGroup Header="Opções gerais" Background="White">
+                <RibbonButton x:Name="MenuButtonUsuario" Label="Usuário"
+                                  LargeImageSource="Resources/img_user_50.png" Click="MenuButtonUsuario_OnClick">
+                </RibbonButton>
+                <RibbonButton x:Name="MenuButtonEmpresa" Label="Empresa"
+                                  LargeImageSource="Resources/img_bussines.png" Click="MenuButtonEmpresa_OnClick">
+                </RibbonButton>
+                <RibbonButton x:Name="MenuButtonFiltros" Label="Filtros de empresa" Click="MenuButtonFiltros_Click"
+                              LargeImageSource="Resources/filter-company-32.png"></RibbonButton>
+                <RibbonButton x:Name="MenuButtonTradutor" Label="Tradutor"
+                                  LargeImageSource="Resources/img_translate.png" Click="MenuButtonTradutor_OnClick">
+                </RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Acessos" Background="White">
+                <RibbonButton x:Name="MenuButtonGrupoAcesso" Label="Grupo de acesso" LargeImageSource="Resources/img-group.png"
+                                  Click="MenuButtonGrupoAcesso_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Relatórios/Consultas" Background="White">
+                <RibbonButton x:Name="MenuButtonQuery" Label="Queries" LargeImageSource="Resources/icon_sql.png"
+                                  Click="MenuButtonQuery_OnClick "></RibbonButton>
+                <RibbonButton x:Name="MenuButtonFilter" Label="Filtros" LargeImageSource="Resources/icon_filter.png"
+                                  Click="MenuButtonFilter_OnClick "></RibbonButton>
+                <RibbonButton x:Name="MenuButtonReport" Label="Relatório" LargeImageSource="Resources/icon_report.png"
+                                  Click="MenuButtonReport_OnClick"></RibbonButton>
+                <RibbonButton x:Name="MenuButtonConsult" Label="Consultas" LargeImageSource="Resources/icon_query.png"
+                                  Click="MenuButtonConsult_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Parametrização" Background="White">
+                <RibbonButton x:Name="MenuButtonAutNumbering" Label="Numeração Automática" LargeImageSource="Resources/automatic-32.png"
+                              Click="MenuButtonAutNumbering_Click"></RibbonButton>
+            </RibbonGroup>
+        </RibbonTab>
+        <RibbonTab Header="Cadastros Iniciais" Background="White">
+            <RibbonGroup Header="Pessoas" Background="White">
+                <RibbonButton x:Name="MenuButtonPessoaJuridica" Label="Pessoa Jurídica" LargeImageSource="Resources/icon_legalPerson.png"
+                                  Click="MenuButtonPessoaJuridica_OnClick"></RibbonButton>
+                <RibbonButton x:Name="MenuButtonFornecedor" Label="Fornecedor" LargeImageSource="Resources/icon_provider.png"
+                                  Click="MenuButtonFornecedor_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Estoque" Background="White">
+                <RibbonButton x:Name="MenuButtonItemEstoque" Label="Item Estoque" LargeImageSource="Resources/Icon_stock.png"
+                                  Click="MenuButtonItemEstoque_OnClick"></RibbonButton>
+
+                <RibbonButton x:Name="MenuButtonFamilia" Label="Familia" SmallImageSource="Resources/icon_family_stock.png" 
+                                  Click="MenuButtonFamilia_OnClick"></RibbonButton>
+                <RibbonButton x:Name="MenuItemUnidadeMedidad" Label="Unidade de Medida" SmallImageSource="Resources/icon_unitMeasure.png"
+                                  Click="MenuItemUnidadeMedidad_OnClick"></RibbonButton>
+                <RibbonMenuButton SmallImageSource="Resources/icon_list.png" Label="Outros" Background="White">
+                    <RibbonButton x:Name="MenuButtonLocal" Label="Local" SmallImageSource="Resources/local.png"
+                                      Click="MenuButtonLocal_OnClick"></RibbonButton>
+                    <RibbonButton x:Name="MenuButtonMarca" Label="Marca" SmallImageSource="Resources/icon_mark.gif"
+                                      Click="MenuButtonMarca_OnClick"></RibbonButton>
+                    <RibbonButton x:Name="MenuButtonModel" Label="Modelo" SmallImageSource="Resources/icon_model.png"
+                                      Click="MenuButtonModel_OnClick"></RibbonButton>
+                </RibbonMenuButton>
+
+                <RibbonButton x:Name="MenuButtonNcm" Label="NCM" LargeImageSource="Resources/icon_ncm.fw.png" 
+                                  Click="MenuButtonNcm_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Outros">
+                <RibbonButton x:Name="MenuButtonCor" Label="Cor" LargeImageSource="Resources/icon_color.png" 
+                                  Click="MenuButtonCor_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Serviços">
+                <RibbonButton x:Name="MenuButtonServico" Label="Serviço" LargeImageSource="Resources/icon_service.png" 
+                                  Click="MenuButtonServico_OnClick"></RibbonButton>
+                <RibbonButton x:Name="MenuButtonTipoServico" Label="Tipo de Serviço" LargeImageSource="Resources/icon_typeService.png" 
+                                  Click="MenuButtonTipoServico_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Gestão Fiscal" Background="White">
+                <RibbonButton x:Name="MenuButtonImpostos" Label="Impostos" LargeImageSource="Resources/icon_taxation.fw.png"
+                                  Click="MenuButtonImpostos_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Background="White" Header="Cidade/Estado/Países">
+                <RibbonButton x:Name="RibbonButtonCidade" Label="Cidade" LargeImageSource="Resources/icon_city.png" 
+                              Click="RibbonButtonCidade_OnClick"></RibbonButton>
+                <RibbonButton x:Name="RibbonButtonEstado" Label="Estado" LargeImageSource="Resources/icon_state.png" 
+                              Click="RibbonButtonEstado_OnClick"></RibbonButton>
+                <RibbonButton x:Name="RibbonButtonPais" Label="Pais" LargeImageSource="Resources/icon_country.png" 
+                              Click="RibbonButtonPais_OnClick"></RibbonButton>
+            </RibbonGroup>
+        </RibbonTab>
+        <RibbonTab Header="Estoque" Selector.IsSelected="True">
+            <RibbonGroup Header="Entrada/Saída" Background="White">
+                <RibbonButton x:Name="MenuButtonEntradaEstoque" Label="Entrada" LargeImageSource="Resources/arrow_top_green.png"
+                              Click="MenuButtonEntradaEstoque_OnClick">
+                </RibbonButton>
+                <RibbonButton x:Name="MenuButtonSaidaEstoque" Label="Saída" LargeImageSource="Resources/arrow_bottom_red.png"
+                              Click="MenuButtonSaidaEstoque_OnClick">
+                </RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Estoque" Background="White">
+
+                <RibbonButton Label="Item Estoque" LargeImageSource="Resources/Icon_stock.png"
+                                  Click="MenuButtonItemEstoque_OnClick"></RibbonButton>
+
+                <RibbonButton  Label="Unidade de Medida" LargeImageSource="Resources/icon_unitMeasure.png"
+                                  Click="MenuItemUnidadeMedidad_OnClick">
+                </RibbonButton>
+
+                <RibbonButton Label="Familia de Estoque" LargeImageSource="Resources/icon_family_stock.png" 
+                                  Click="MenuButtonFamilia_OnClick"></RibbonButton>
+
+                <RibbonButton  Label="Conversão de Unid. Medida" LargeImageSource="Resources/icon_unitMeasure.png"
+                                  Click="MenuButtonConversaoUndMedida_Click" Background="White" Opacity="0.8"/>
+
+                <RibbonButton Label="Local" LargeImageSource="Resources/local.png"
+                                      Click="MenuButtonLocal_OnClick"></RibbonButton>
+
+                <RibbonButton  Label="Marca" LargeImageSource="Resources/icon_mark.gif"
+                                      Click="MenuButtonMarca_OnClick"></RibbonButton>
+
+                <RibbonButton  Label="Modelo" LargeImageSource="Resources/icon_model.png"
+                                      Click="MenuButtonModel_OnClick"></RibbonButton>
+            </RibbonGroup>
+        </RibbonTab>
+        <RibbonTab Header="Funerária" Background="White">
+            <RibbonGroup Header="Financeiro" Background="White">
+                <RibbonButton x:Name="MenuButtonNotaDebito" Label="Nota de Débito" LargeImageSource="Resources/icon-nt.png" 
+                                  Click="MenuButtonNotaDebito_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Contratada" Background="White">
+                <RibbonButton x:Name="MenuButtonContratada" Label="Contratada" LargeImageSource="Resources/icon_contracor.png" 
+                                  Click="MenuButtonContratada_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Dados Falecido" Background="White">
+                <RibbonButton x:Name="MenuButtonDadosFalecido" Label="Dados do Falecido" LargeImageSource="Resources/dead.png" 
+                                  Click="MenuButtonDadosFalecido_OnClick"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Ordem de Serviço" Background="White">
+                <RibbonButton x:Name="MenuButtonOrdemSerivco" Label="Ordem de Serviço" LargeImageSource="Resources/icon_orderService.png" 
+                                  Click="MenuButtonOrderServico_OnClick"></RibbonButton>
+                <RibbonButton x:Name="RibbonButtonAttendant" Label="Grupo de Atendente" LargeImageSource="Resources/icon_attendant.png"
+                              Click="RibbonButtonAttendant_OnClick"></RibbonButton>
+                <RibbonButton x:Name="RibbonButtonReligion" Label="Religião" LargeImageSource="Resources/icon_religion.png"
+                              Click="RibbonButtonReligion_OnClick"></RibbonButton>
+                <RibbonButton x:Name="RibbonButtonPlan" Label="Plano" LargeImageSource="Resources/icon_plan.png"
+                              Click="RibbonButtonPlan_OnClick"></RibbonButton>
+            </RibbonGroup>
+        </RibbonTab>
+
+        <RibbonTab Header="Gestão de Frotas" Selector.IsSelected="False">
+            <RibbonGroup Header="Cadastros do Veículo">
+                <RibbonButton Label="Veículos" x:Name="MnVeiculo" LargeImageSource="Resources/icon_vehicle.png" Click="MnVeiculo_Click" Height="67"/>
+
+                <RibbonSeparator Height="1" Width="65">
+                    <RibbonSeparator.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90"/>
+                        </TransformGroup>
+                    </RibbonSeparator.RenderTransform>
+                </RibbonSeparator>
+
+                <RibbonButton Label="Modelos" x:Name="MnModelo" SmallImageSource="Resources/model_vehicle.fw.png" Click="MnModelo_Click" Height="20"/>
+                <RibbonButton Label="Marcas" x:Name="MnMarca" SmallImageSource="Resources/icon_mark.gif" Click="MenuButtonMarca_OnClick" Height="20"/>
+                <RibbonButton Label="Cores" x:Name="MnCorVeiculo" SmallImageSource="Resources/icon_color.png" Click="MenuButtonCor_OnClick" Height="20"/>
+
+                <!--<RibbonButton Label="Tipos" x:Name="MnTipoVeiculo" LargeImageSource="Resources/car_type.ico" Click="MnTipoVeiculo_Click"/>-->
+
+            </RibbonGroup>
+
+            <RibbonGroup Header="Veículos"  >
+                <RibbonButton Label="Associar Placa" x:Name="MenuButtonPlaca" LargeImageSource="Resources/icon_placa.fw.png" Click="MenuButtonPlaca_OnClick"></RibbonButton>
+                <RibbonButton Label="Veículo" x:Name="MenuButtonVeiculo" LargeImageSource="Resources/icon_vehicle.png" Click="MenuButtonVeiculo_OnClick"></RibbonButton>
+                <RibbonButton Label="Modelo" x:Name="MenubuttonModelo" LargeImageSource="Resources/model_vehicle.fw.png" Click="MenubuttonModelo_OnClick"></RibbonButton>
+                <RibbonButton Label="Cor" LargeImageSource="Resources/icon_color.png"  Click="MenuButtonCor_OnClick"></RibbonButton>
+                <RibbonButton Label="Motorista" LargeImageSource="Resources/icon_motorist.png"  Click="MenuButtonMotorista_OnClick"></RibbonButton>
+            </RibbonGroup>
+        </RibbonTab>
+
+        <RibbonTab Header="Estacionamento" x:Name="ModuleEstacionamento" Visibility="Visible">
+            <RibbonGroup Header="Entrada e Saída">
+                <RibbonButton Label="Entrada" x:Name="MenuButtonEntradaEstacionamento" LargeImageSource="Resources/arrow_top_green.png"
+                              Click="MenuButtonEntradaEstacionamento_Click"></RibbonButton>
+                <RibbonButton Label="Saída" x:Name="MenuButtonSaídaEstacionamento" LargeImageSource="Resources/arrow_bottom_red.png"
+                              Click="MenuButtonSaídaEstacionamento_Click"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Movimentos">
+                <RibbonButton Label="E/S" x:Name="MenuButtonEntradaSaida" LargeImageSource="Resources/Icon_Parking.png" Click="MenuButtonEntradaSaida_Click"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Preços">
+                <RibbonButton Label="Formas de Pagamento" x:Name="MenuButtonFormaPagamento" LargeImageSource="Resources/Icon_FormOfPayment.png" Click="MenuButtonFormaPagamento_Click"></RibbonButton>
+                <RibbonButton Label="Tabela de Preço" x:Name="MenuButtonTabelaPreco" LargeImageSource="Resources/Icon_TableOfPrice.png" Click="MenuButtonTabelaPreco_Click"></RibbonButton>
+                <RibbonButton Label="Convênios" x:Name="MenuButtonAgreement" LargeImageSource="Resources/Icon_Agreement.png" Click="MenuButtonAgreement_Click"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Parâmetros">
+                <RibbonButton Label="Parâmetros" />
+            </RibbonGroup>
+        </RibbonTab>
+
+        <RibbonTab Header="Financeiro" x:Name="ModuleFinanceiro" Visibility="Visible">
+            <RibbonGroup Header="Contas a Receber">
+                <RibbonButton Label = "A Receber" x:Name = "MenuButtonContasReceber" LargeImageSource="Resources/Icon_BillsReceive.png"
+                              Click="MenuButtonContasReceber_Click"></RibbonButton>
+            </RibbonGroup>
+            <RibbonGroup Header="Diversos">
+                <RibbonButton Label = "Tipo de Documento" x:Name = "MenuButtonTipoDocumento" LargeImageSource="Resources/Icon_FinancialDocument.png"
+                              Click="MenuButtonTipoDocumento_Click"></RibbonButton>
+            </RibbonGroup>
+        </RibbonTab>
+
+        <RibbonTab Header="Telas favoritas" ContextualTabGroupHeader="Acesso rápido">
+            <RibbonGroup/>
+        </RibbonTab>
+
+        <RibbonTab Header="Relatórios favoritos" ContextualTabGroupHeader="Acesso rápido">
+            <RibbonGroup/>
+        </RibbonTab>
+
+        <Ribbon.ContextualTabGroups>
+            <RibbonContextualTabGroup Header="Acesso rápido" Visibility="Visible" Background="Green" />
+        </Ribbon.ContextualTabGroups>
+    </Ribbon>
+</UserControl>

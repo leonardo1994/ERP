@@ -34,6 +34,7 @@ namespace Esr.Module.FleetManagement.Forms.Vehicles
             VehicleModelVehicles.IsDependecyUkey = false;
             VehicleModelVehicles.FormType = typeof(FModelVehicle);
             VehicleModelVehicles.Caption = "Modelos";
+            VehicleModelVehicles.PropertyDisplayForm = "ModelVehicleId";
 
             ImageSource = Properties.Resources.icon_vehicle;
         }

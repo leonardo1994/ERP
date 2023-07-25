@@ -25,14 +25,14 @@ namespace Esr.Module.FleetManagement.Forms.Vehicles
 
             InitializeComponent();
 
-            Plate.Mask = "AAA-9999";
+            Plate.Mask = "AAA-9A99";
 
             VehicleId.ValueMember = "Id";
             VehicleId.DisplayMember = "NameVehicle";
             VehicleId.FormType = typeof(FVehicle);
             VehicleId.ObjetoApp = new InvokeMethod(typeof(VehicleController), TypeExecute.SearchAll, "ListVehicle", typeof(Vehicle));
 
-            ModelVehicleId.ValueMember = "Id";
+            ModelVehicleId.ValueMember = "ModelVehicleId";
             ModelVehicleId.DisplayMember = "Description";
             ModelVehicleId.FormType = typeof(FModelVehicle);
             ModelVehicleId.ObjetoApp = new InvokeMethod(typeof(VehicleModelVehicleController), TypeExecute.Search, "ListVehicleModelVehicle", typeof(VehicleModelVehicle));
@@ -43,7 +43,6 @@ namespace Esr.Module.FleetManagement.Forms.Vehicles
             ColorId.ObjetoApp = new InvokeMethod(typeof(ColorModelVehicleController), TypeExecute.Search, "ListColorModelVehicle", typeof(ColorModelVehicle));
 
             ImageSource = Properties.Resources.icon_placa_fw;
-
         }
     }
 }

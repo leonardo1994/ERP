@@ -7,20 +7,23 @@ using Esr.Core.Domain.RepositoryFactory;
 using System;
 using System.Data.Entity.Validation;
 using System.Text;
-using System.Data.Entity.Infrastructure;
+using DbUpdateException = System.Data.Entity.Infrastructure.DbUpdateException;
+using System.Configuration;
 
 namespace Esr.Core.Repository
 {
     // Autor: LEONARDO TEIXEIRA DOS SANTOS SILVA
     // CNPJ: 23.416.009/0001-83
     // 2015 ©LEONARDO TEIXEIRA DOS SANTOS SILVA 43342439831 | Todos os Direitos  Reservados
-    public class DbContextConnection : DbContext, IFactoryConnection
+    public class DbContextConnection : System.Data.Entity.DbContext, IFactoryConnection
     {
         [ImportMany(typeof(IFactoryConnection))]
         public IEnumerable<IFactoryConnection> FactoryConnection { get; set; }
 
         public DbContextConnection()
-         : base(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\custy\OneDrive\Projetos\ESR Softwares\ERP\Esr.Core.Repositorio\BancoESR.mdf';Integrated Security=True")
+         : base(ConfigurationManager.AppSettings["ConnectionString"])
+         //: base(@"Server=localhost,1433;Database=ESR;User ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False; TrustServerCertificate=True;")
+         //: base(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\custy\OneDrive\Projetos\ESR Softwares\ERP\Esr.Core.Repositorio\BancoESR.mdf';Integrated Security=True")
          //: base(@"Data Source =(local);Initial Catalog = ESR; Integrated Security = True")
          //: base(@"Data Source=SERGIO-PC\SQLEXPRESS;Initial Catalog=ESR; Persist Security Info=True;User ID=sa;Password=Esr@2016")
          //: base(@"Data Source=DOCUMENTO-01\SQLEXPRESS;Initial Catalog=ESR; Persist Security Info=True;User ID=sa;Password=Esr@2016")

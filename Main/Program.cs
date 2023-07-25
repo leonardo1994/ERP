@@ -12,8 +12,8 @@ namespace Esr.Main
         [STAThread]
         static void Main()
         {
-            try
-            {
+            //try
+            //{
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
@@ -27,11 +27,11 @@ namespace Esr.Main
                 if (login.Confirmed)
                     Application.Run(new FMain());
                 //Application.Run(new FSearch());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "O sistema será fechado");
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "O sistema será fechado");
+            //}
         }
     }
 }

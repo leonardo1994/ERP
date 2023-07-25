@@ -34,29 +34,38 @@ namespace Esr.Core.Component
         /// </summary>
         public string PropertySearch { get; set; }
 
+        private object _lastValue { get; set; }
+
         public SComboBox()
         {
-            SComponent.DropDownClosed += SComponentOnDropDownClosed;
-            SComponent.DropDown += SComponentOnDropDown;
+            //SComponent.DropDownClosed += SComponentOnDropDownClosed;
+            //SComponent.DropDown += SComponentOnDropDown;
             SComponent.GotFocus += SComponentOnGotFocus;
             SComponent.LostFocus += SComponentOnLostFocus;
             SComponent.KeyDown += SComponentOnKeyDown;
-            SComponent.TextChanged += SComponent_TextChanged;
-        }
-
-        private void SComponent_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        protected override void SetObjectControl()
-        {
-            base.SetObjectControl();
+            SComponent.AutoCompleteMode = AutoCompleteMode.Suggest;
+            SComponent.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void SComponent_SelectedValueChanged(object sender, EventArgs e)
         {
-            ValueControl = SComponent.SelectedValue;
+            if ((sender as ComboBox)?.SelectedIndex >= 0)
+            {
+                ValueControl = SComponent.SelectedValue;
+
+                var appendValue = GetAttribute<AppendValue>(PropertyControl);
+                if (appendValue == null) return;
+                for (var i = 0; i < appendValue.PropertiesGetValue.Count(); i++)
+                {
+                    var property =
+                        _sReflection
+                            .GetProperties(SComponent.SelectedItem)?.FirstOrDefault(c => c.Name == appendValue.PropertiesGetValue[i]);
+                    var value = property?.GetValue(SComponent.SelectedItem);
+                    var component = GetSForm().GetListControls().FirstOrDefault(c => c.Name == appendValue.PropertiesSetValue[i]);
+                    if (component == null) continue;
+                    component.ValueControl = value;
+                }
+            }
         }
 
         private void SComponentOnKeyDown(object sender, KeyEventArgs keyEventArgs)
@@ -111,9 +120,8 @@ namespace Esr.Core.Component
                         var rt = MessageBox.Show("Item não existe na lista, deseja cadastrar novo ?", "ESR Softwares", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if(rt == DialogResult.Yes)
                         {
-                            if (Form == null)
-                                if (FormType != null)
-                                    Form = new SReflection().CreateNewInstance<FForm>(FormType);
+                            if (Form == null && FormType != null)
+                                Form = new SReflection().CreateNewInstance<FForm>(FormType);
                             Form.StateForm = StateForm.Inserting;
                             if (Form.CurrentControl == null)
                                 Form.bindingSource.AddNew();
@@ -140,9 +148,8 @@ namespace Esr.Core.Component
         {
             try
             {
-                if (Form == null)
-                    if (FormType != null)
-                        Form = new SReflection().CreateNewInstance<FForm>(FormType);
+                if (Form == null && FormType != null)
+                    Form = new SReflection().CreateNewInstance<FForm>(FormType);
                 if (FormType != null)
                     RibbonTab = GetSForm().AddTab(Form, this);
                 var value = SComponent.SelectedIndex;
@@ -158,10 +165,14 @@ namespace Esr.Core.Component
         {
             set
             {
-                base.ValueControl = value;
-                if (value == null) return;
-                SComponent.SelectedValue = value;
-                UpdateChilds();
+                if (_lastValue == null || !_lastValue.Equals(value))
+                {
+                    base.ValueControl = value;
+                    if (value == null) return;
+                    SComponent.SelectedValue = value;
+                    UpdateChilds();
+                    _lastValue = value;
+                }
             }
             get
             {
@@ -336,6 +347,15 @@ namespace Esr.Core.Component
                 }
                 var query = _sReflection.GetListContext(ObjetoApp.TypeController, method);
                 SComponent.DataSource = query;
+
+                if (query != null && query.Count > 0)
+                {
+                    SComponent.SelectedValueChanged += SComponent_SelectedValueChanged;
+                }
+                else
+                {
+                    SComponent.SelectedValueChanged -= SComponent_SelectedValueChanged;
+                }
             }
 
             /*

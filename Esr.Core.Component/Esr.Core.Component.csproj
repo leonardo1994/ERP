@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Esr.Core.Component</RootNamespace>
     <AssemblyName>Esr.Core.Component</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <SccProjectName>SAK</SccProjectName>
@@ -96,12 +96,6 @@
       <DependentUpon>FBase.cs</DependentUpon>
     </Compile>
     <Compile Include="InvokeMethod.cs" />
-    <Compile Include="Log\FLog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Log\FLog.Designer.cs">
-      <DependentUpon>FLog.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormVisualisador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +115,12 @@
       <DependentUpon>FSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="IComponet.cs" />
+    <Compile Include="Log\FLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log\FLog.Designer.cs">
+      <DependentUpon>FLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="SAttributes\ImageSource.cs" />
     <Compile Include="SAttributes\IModule.cs" />
     <Compile Include="SCheckListBox.cs">
@@ -205,9 +205,6 @@
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Log\FLog.resx">
-      <DependentUpon>FLog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormVisualisador.resx">
       <DependentUpon>FormVisualisador.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FSearch.resx">
       <DependentUpon>FSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log\FLog.resx">
+      <DependentUpon>FLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

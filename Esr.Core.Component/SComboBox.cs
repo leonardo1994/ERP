@@ -38,7 +38,7 @@ namespace Esr.Core.Component
 
         public SComboBox()
         {
-            //SComponent.DropDownClosed += SComponentOnDropDownClosed;
+            SComponent.DropDownClosed += SComponentOnDropDownClosed;
             //SComponent.DropDown += SComponentOnDropDown;
             SComponent.GotFocus += SComponentOnGotFocus;
             SComponent.LostFocus += SComponentOnLostFocus;
@@ -165,7 +165,7 @@ namespace Esr.Core.Component
         {
             set
             {
-                if (_lastValue == null || !_lastValue.Equals(value))
+                if (_lastValue == null || !_lastValue.Equals(value) && value != null)
                 {
                     base.ValueControl = value;
                     if (value == null) return;
@@ -337,7 +337,9 @@ namespace Esr.Core.Component
         }
         public void SetList()
         {
-             if (ObjetoApp != null && GetAttribute<DependencyKey>(PropertyControl) == null)
+            SComponent.SelectedValueChanged -= SComponent_SelectedValueChanged;
+
+            if (ObjetoApp != null && GetAttribute<DependencyKey>(PropertyControl) == null)
             {
                 var method = ObjetoApp.Methods.FirstOrDefault(c => c.Key == TypeExecute.SearchAll).Value;
                 if (string.IsNullOrEmpty(method))

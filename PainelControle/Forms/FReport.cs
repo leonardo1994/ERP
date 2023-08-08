@@ -27,7 +27,11 @@ namespace Esr.Module.ControlPainel.Forms
             QueryId.ValueMember = "Id";
             QueryId.FormType = typeof(FQuery);
 
-            ReportForms.ObjetoApp = new InvokeMethod(typeof(ReportFormController), TypeExecute.Search, "ReportSearch", typeof(ReportForm));
+            ReportForms.ObjetoApp = new InvokeMethod(typeof(ReportFormController), new Dictionary<TypeExecute, string>()
+                {
+                    { TypeExecute.InsertOrUpdate, "Save" },
+                    { TypeExecute.Search, "ReportSearch" },
+                }, typeof(ReportForm));
             ReportForms.ScreenSecondary = true;
             ReportForms.FormType = typeof(FTable);
         }

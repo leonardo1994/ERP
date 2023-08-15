@@ -22,20 +22,22 @@
     <PublishUrl>C:\Users\leonardo.silva\Documents\ESR\VERSAO\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
+    <UpdateUrl>\\svr02f\ESR\VERSAO 2023\VERSAO 2023\</UpdateUrl>
     <SupportUrl>http:\\www.esrsoftwares.com.br</SupportUrl>
     <ErrorReportUrl>http:\\www.esrsoftwares.com.br</ErrorReportUrl>
     <ProductName>ESR Softwares</ProductName>
     <PublisherName>ESR Softwares</PublisherName>
     <SuiteName>ESR Softwares</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>33</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>35</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
